@@ -64,17 +64,18 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-ro-gq0">
                                                 <rect key="frame" x="0.0" y="0.0" width="215" height="38"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.1964790394764073" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="23"/>
+                                                <fontDescription key="fontDescription" name="TamilSangamMN-Bold" family="Tamil Sangam MN" pointSize="23"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="LOGIN">
                                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="15"/>
+                                                        <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afJ-Pd-CIw"/>
                                                     <segue destination="Czq-yt-lX9" kind="show" identifier="tasksSegue" id="Fg7-8v-14r"/>
                                                 </connections>
                                             </button>
@@ -90,6 +91,9 @@
                                                         <integer key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="ragisterTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yu3-gt-Gfc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -117,6 +121,11 @@
                             <constraint firstItem="8KB-Hl-m6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yrp-cF-3hv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="PZ1-UT-6Bi" id="fvZ-X7-GNz"/>
+                        <outlet property="passwordTextField" destination="a0M-OX-uew" id="XMt-KM-nVU"/>
+                        <outlet property="warningLabel" destination="U5v-Lj-ZhI" id="ZCA-pj-enC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,8 +170,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="uLw-hv-fHS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Ta-ts-vi1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Ta-ts-vi1">
+                            <connections>
+                                <action selector="addTapped:" destination="osT-gE-GRV" id="rHg-gd-SO4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="TasksTableView" destination="55Z-d0-RWp" id="NSc-fR-BhC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIu-Bx-3sD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
