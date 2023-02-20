@@ -2,12 +2,12 @@
 //  ViewController.swift
 //  Tasks
 //
-//  Created by jopootrivatel on 20.02.2023.
+//  Created by Nikita Chekan on 20.02.2023.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

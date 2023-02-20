@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0399CF29A4114A001A99C4 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0399CE29A4114A001A99C4 /* TasksViewController.swift */; };
 		DA90B9FE29A407140060CDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90B9FD29A407140060CDB3 /* AppDelegate.swift */; };
 		DA90BA0029A407140060CDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90B9FF29A407140060CDB3 /* SceneDelegate.swift */; };
-		DA90BA0229A407140060CDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90BA0129A407140060CDB3 /* ViewController.swift */; };
+		DA90BA0229A407140060CDB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90BA0129A407140060CDB3 /* LoginViewController.swift */; };
 		DA90BA0529A407140060CDB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA90BA0329A407140060CDB3 /* Main.storyboard */; };
 		DA90BA0729A407160060CDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA90BA0629A407160060CDB3 /* Assets.xcassets */; };
 		DA90BA0A29A407160060CDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA90BA0829A407160060CDB3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0399CE29A4114A001A99C4 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		DA90B9FA29A407140060CDB3 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA90B9FD29A407140060CDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA90B9FF29A407140060CDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA90BA0129A407140060CDB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA90BA0129A407140060CDB3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DA90BA0429A407140060CDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA90BA0629A407160060CDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA90BA0929A407160060CDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0399D029A41154001A99C4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA90BA0129A407140060CDB3 /* LoginViewController.swift */,
+				DA0399CE29A4114A001A99C4 /* TasksViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DA0399D129A4116C001A99C4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DA90B9FD29A407140060CDB3 /* AppDelegate.swift */,
+				DA90B9FF29A407140060CDB3 /* SceneDelegate.swift */,
+				DA90BA0B29A407160060CDB3 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DA0399D229A4117E001A99C4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DA90BA0329A407140060CDB3 /* Main.storyboard */,
+				DA90BA0829A407160060CDB3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DA0399D329A4118F001A99C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA90BA0629A407160060CDB3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DA90B9F129A407130060CDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +94,10 @@
 		DA90B9FC29A407140060CDB3 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				DA90B9FD29A407140060CDB3 /* AppDelegate.swift */,
-				DA90B9FF29A407140060CDB3 /* SceneDelegate.swift */,
-				DA90BA0129A407140060CDB3 /* ViewController.swift */,
-				DA90BA0329A407140060CDB3 /* Main.storyboard */,
-				DA90BA0629A407160060CDB3 /* Assets.xcassets */,
-				DA90BA0829A407160060CDB3 /* LaunchScreen.storyboard */,
-				DA90BA0B29A407160060CDB3 /* Info.plist */,
+				DA0399D129A4116C001A99C4 /* App */,
+				DA0399D029A41154001A99C4 /* ViewControllers */,
+				DA0399D229A4117E001A99C4 /* Storyboards */,
+				DA0399D329A4118F001A99C4 /* Resources */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -138,7 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA90BA0229A407140060CDB3 /* ViewController.swift in Sources */,
+				DA90BA0229A407140060CDB3 /* LoginViewController.swift in Sources */,
+				DA0399CF29A4114A001A99C4 /* TasksViewController.swift in Sources */,
 				DA90B9FE29A407140060CDB3 /* AppDelegate.swift in Sources */,
 				DA90BA0029A407140060CDB3 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M963S5SV4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Tasks/Info.plist;
+				INFOPLIST_FILE = Tasks/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +357,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M963S5SV4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Tasks/Info.plist;
+				INFOPLIST_FILE = Tasks/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
