@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet var warningLabel: UILabel!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -21,6 +21,12 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         warningLabel.alpha = 0
+        
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            if user != nil {
+                self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
+            }
+        }
     }
     
     @objc func keyboardDidShow(notification: Notification) {
@@ -76,12 +82,13 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             
             if error != nil {
                 if user != nil {
-                    self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
-                    return
+                    
+                } else {
+                    print(error!.localizedDescription)
                 }
             }
         })
