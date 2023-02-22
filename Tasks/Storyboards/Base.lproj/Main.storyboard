@@ -76,7 +76,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afJ-Pd-CIw"/>
-                                                    <segue destination="Czq-yt-lX9" kind="show" identifier="tasksSegue" id="Fg7-8v-14r"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzt-0v-IoP">
@@ -125,6 +124,7 @@
                         <outlet property="emailTextField" destination="PZ1-UT-6Bi" id="fvZ-X7-GNz"/>
                         <outlet property="passwordTextField" destination="a0M-OX-uew" id="XMt-KM-nVU"/>
                         <outlet property="warningLabel" destination="U5v-Lj-ZhI" id="ZCA-pj-enC"/>
+                        <segue destination="Czq-yt-lX9" kind="show" identifier="tasksSegue" id="JkR-Qv-iZm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="55Z-d0-RWp">
-                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="539"/>
                                 <color key="backgroundColor" red="0.682382822" green="0.6823297143" blue="0.69804173709999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
