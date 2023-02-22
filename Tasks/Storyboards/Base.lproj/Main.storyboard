@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="55Z-d0-RWp">
-                                <rect key="frame" x="0.0" y="108" width="375" height="539"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
                                 <color key="backgroundColor" red="0.682382822" green="0.6823297143" blue="0.69804173709999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -170,6 +170,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="uLw-hv-fHS">
+                        <barButtonItem key="leftBarButtonItem" title="SignOut" id="21N-bT-QXo">
+                            <connections>
+                                <action selector="signOutTapped:" destination="osT-gE-GRV" id="GWv-G3-T6i"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Ta-ts-vi1">
                             <connections>
                                 <action selector="addTapped:" destination="osT-gE-GRV" id="rHg-gd-SO4"/>

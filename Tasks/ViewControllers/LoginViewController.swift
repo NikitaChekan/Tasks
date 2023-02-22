@@ -29,6 +29,13 @@ class LoginViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        emailTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
     @objc func keyboardDidShow(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
         let keyboardFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -51,7 +58,7 @@ class LoginViewController: UIViewController {
             self?.warningLabel.alpha = 0
         }
     }
-
+    
     @IBAction func loginTapped(_ sender: Any) {
         
         guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
@@ -60,17 +67,17 @@ class LoginViewController: UIViewController {
         }
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { [weak self] (user, error) in
-
+            
             if error != nil {
                 self?.displayWarningLabel(withText: "Label occurred!")
                 return
             }
-
+            
             if user != nil {
                 self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
                 return
             }
-
+            
             self?.displayWarningLabel(withText: "No such user!")
         })
     }
