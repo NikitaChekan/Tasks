@@ -10,12 +10,16 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
+    var ref: DatabaseReference!
+    
     @IBOutlet var warningLabel: UILabel!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference(withPath: "users")
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
@@ -89,15 +93,16 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] (authResult, error) in
             
-            if error != nil {
-                if user != nil {
-                    
-                } else {
-                    print(error!.localizedDescription)
-                }
+            guard error == nil, let user = authResult?.user else {
+                print(error?.localizedDescription)
+                return
             }
+            
+            let userRef = self?.ref.child(user.uid)
+            userRef?.setValue(user.email, forKey: "email")
+            
         })
     }
     

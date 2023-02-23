@@ -17,6 +17,8 @@
 		DA9DE79F29A4A73800BE294F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA9DE79E29A4A73800BE294F /* GoogleService-Info.plist */; };
 		DA9DE7A229A4AAA600BE294F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DA9DE7A129A4AAA600BE294F /* FirebaseAuth */; };
 		DA9DE7A429A4AAA600BE294F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DA9DE7A329A4AAA600BE294F /* FirebaseDatabase */; };
+		DAAC18D729A6A66A0082C4BA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC18D629A6A66A0082C4BA /* Task.swift */; };
+		DAAC18D929A6A67A0082C4BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC18D829A6A67A0082C4BA /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		DA90BA0929A407160060CDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA90BA0B29A407160060CDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA9DE79E29A4A73800BE294F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAAC18D629A6A66A0082C4BA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		DAAC18D829A6A67A0082C4BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			children = (
 				DA0399D129A4116C001A99C4 /* App */,
 				DA0399D029A41154001A99C4 /* ViewControllers */,
+				DAAC18D529A6A64F0082C4BA /* Models */,
 				DA0399D229A4117E001A99C4 /* Storyboards */,
 				DA9DE79D29A4A71300BE294F /* Supporting Files */,
 				DA0399D329A4118F001A99C4 /* Resources */,
@@ -115,6 +120,15 @@
 				DA9DE79E29A4A73800BE294F /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAAC18D529A6A64F0082C4BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC18D629A6A66A0082C4BA /* Task.swift */,
+				DAAC18D829A6A67A0082C4BA /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +212,8 @@
 			files = (
 				DA90BA0229A407140060CDB3 /* LoginViewController.swift in Sources */,
 				DA0399CF29A4114A001A99C4 /* TasksViewController.swift in Sources */,
+				DAAC18D929A6A67A0082C4BA /* User.swift in Sources */,
+				DAAC18D729A6A66A0082C4BA /* Task.swift in Sources */,
 				DA90B9FE29A407140060CDB3 /* AppDelegate.swift in Sources */,
 				DA90BA0029A407140060CDB3 /* SceneDelegate.swift in Sources */,
 			);
