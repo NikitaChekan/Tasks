@@ -26,11 +26,11 @@ class LoginViewController: UIViewController {
         
         warningLabel.alpha = 0
         
-        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+        Auth.auth().addStateDidChangeListener( { [weak self] (auth, user) in
             if user != nil {
                 self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
             }
-        }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,15 +96,13 @@ class LoginViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] (authResult, error) in
             
             guard error == nil, let user = authResult?.user else {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
             
             let userRef = self?.ref.child(user.uid)
             userRef?.setValue(user.email, forKey: "email")
-            
         })
     }
     
 }
-

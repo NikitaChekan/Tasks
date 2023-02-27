@@ -31,7 +31,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let save = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
             guard let textField = alertController.textFields?.first, textField.text != "" else { return }
-            
             let task = Task(title: textField.text!, userId: (self?.user.uid)!)
             let taskRef = self?.ref.child(task.title.lowercased())
             taskRef?.setValue(task.convertToDictionary())
@@ -41,7 +40,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         alertController.addAction(save)
         alertController.addAction(cancel)
         
-        present(alertController, animated: true)
+        present(alertController, animated: true, completion: nil)
         
     }
     
