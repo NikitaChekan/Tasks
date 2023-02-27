@@ -25,6 +25,28 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.ref.observe(.value, with: { [weak self] (snapshot) in
+            var _tasks = Array<Task>()
+            
+            for item in snapshot.children {
+                let task = Task(snapshot: item as! DataSnapshot)
+                _tasks.append(task)
+            }
+            
+            self?.tasks = _tasks
+            self?.TasksTableView.reloadData()
+            
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        ref.removeAllObservers()
+    }
+    
     @IBAction func addTapped(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "New Task", message: "Add new task", preferredStyle: .alert)
         alertController.addTextField()
@@ -55,15 +77,16 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         cell.backgroundColor = .clear
-        cell.textLabel?.text = "This is cell number \(indexPath.row)"
         cell.textLabel?.textColor = .white
+        let taskTitle = tasks[indexPath.row].title
+        cell.textLabel?.text = taskTitle
         return cell
     }
 }
