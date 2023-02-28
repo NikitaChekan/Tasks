@@ -10,11 +10,12 @@ import Firebase
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+
+    @IBOutlet var TasksTableView: UITableView!
+    
     var user: AppUser!
     var ref: DatabaseReference!
     var tasks = Array<Task>()
-
-    @IBOutlet var TasksTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +114,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         toggleCompletion(cell, isCompleted: isCompleted)
         task.ref?.updateChildValues(["completed": isCompleted])
-//        return cell
     }
     
     func toggleCompletion(_ cell: UITableViewCell, isCompleted: Bool) {

@@ -10,11 +10,12 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
-    var ref: DatabaseReference!
     
     @IBOutlet var warningLabel: UILabel!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
